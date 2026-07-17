@@ -1,26 +1,128 @@
-        *{
-            box-sizing: border-box;
-        }
-        ul{
-            width: 400px;
-            padding: 0;
-        }
-        .task-item{
-            display: flex;
-            justify-content: space-between;
-            list-style-type: none;
-        }
-        .task-buttons{
-            width: auto;
-        }
-        .task-editing{
-            width: 100%;
-            height: 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 0;
-        }
-        .completed{
-            background-color: rgb(118, 255, 99);
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Tahoma, Verdana, sans-serif;
+    background: #c0c0c0;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+h1 {
+    font-size: 16px;
+}
+
+main{
+    padding: 20px;
+}
+
+#addTaskForm {
+    width: 550px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#addTaskForm input {
+    flex: 1;
+    padding: 8px;
+    border: 2px inset #fff;
+    background: white;
+    font-size: 16px;
+}
+
+button {
+
+    background: #d4d0c8;
+    border: 2px outset white;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+}
+
+button:hover {
+    background: #e6e6e6;
+}
+
+button:active {
+    border: 2px inset white;
+}
+
+.window {
+    width: 600px;
+    border: 2px outset white;
+    background: #d4d0c8;
+    box-shadow: 5px 5px 0 #7a7a7a;
+}
+
+.title-bar {
+    background: linear-gradient(to right, #000080, #1084d0);
+    color: white;
+    padding: 6px 10px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#task-list {
+    width: 550px;
+    list-style: none;
+}
+
+.task-item {
+    background: #d4d0c8;
+    border: 2px outset white;
+    margin-bottom: 12px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-item p {
+    font-size: 17px;
+    word-break: break-word;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.task-buttons button {
+    width: 40px;
+    height: 35px;
+    font-size: 18px;
+}
+
+.completed {
+    background: #70c064;
+}
+
+.completed p {
+    text-decoration: line-through;
+    color: #555;
+}
+
+.task-item:hover {
+    background: #dadada;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #c0c0c0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border: 2px solid #c0c0c0;
+}
