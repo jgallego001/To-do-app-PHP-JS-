@@ -14,7 +14,7 @@ loginForm.onsubmit = async (e) => {
     const mensaje = await res.text();
 
     if (mensaje === "OK") {
-      window.location.href = "./../front_api/test.php";
+      window.location.href = "./app.html";
     } else {
       alert(mensaje);
     }

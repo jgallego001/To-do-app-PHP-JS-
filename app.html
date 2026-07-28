@@ -9,11 +9,19 @@
   </head>
   <body>
     <div class="window">
-      <div class="title-bar"><h1>To Do App</h1></div>
+      <div class="title-bar">
+        <h1>To Do App</h1>
+        <div class="nav-buttons">
+          <button id="logout-btn">
+            <a href="front_api/logout.php">Cerrar sesión</a>
+          </button>
+        </div>
+      </div>
 
       <main>
+        <h2>¡Bienvenido, <span id="username-greeting"></span>!</h2>
         <form id="addTaskForm">
-          <input type="text" name="titulo" placeholder="Ingresa la tarea..." />
+          <input type="text" name="titulo" id="new-task-input" placeholder="Ingresa la tarea..." />
           <button type="submit">Añadir</button>
         </form>
         <ul id="task-list"></ul>

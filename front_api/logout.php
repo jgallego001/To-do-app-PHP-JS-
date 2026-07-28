@@ -9,5 +9,5 @@ $_SESSION = [];
 session_destroy();
 
 // Redirige al login
-header("Location: ./../register.html");
+header("Location: ./../login.html");
 exit;
