@@ -1,0 +1,29 @@
+<?php
+require __DIR__ . '/../config/db.php';
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$email = $_POST['email'];
+$pswrd = $_POST['pswrd'];
+
+$sql = "SELECT * FROM usuarios WHERE email = $1";
+
+$result = pg_query_params($connection, $sql, [$email]);
+
+$usuario = pg_fetch_assoc($result);
+
+if (!$usuario) {
+    die("Correo o contraseña incorrectos");
+}
+
+if(password_verify($pswrd, $usuario["password"])){
+    session_start();
+
+    $_SESSION["usuario_id"] = $usuario['id'];
+
+    echo("OK");
+    exit;
+} else {
+    echo "Correo o contraseña inválidos.";
+}

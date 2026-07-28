@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do App - Login</title>
-    <script defer src="register.js"></script>
+    <script defer src="login.js"></script>
     <style>
       * {
         margin: 0;
@@ -24,37 +24,37 @@
 
       main {
         width: 600px;
-        height: 600px;
+        height: 500px;
         border: 2px outset white;
         background: #d4d0c8;
         box-shadow: 5px 5px 0 #7a7a7a;
         padding: 40px;
       }
 
-      h1{
+      h1 {
         text-align: center;
         margin-bottom: 40px;
       }
 
-      #register-form{
+      #login-form {
         display: flex;
-        height: 300px;
+        height: 200px;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
       }
 
-      #register-form input,
-      #register-form button{
+      #login-form input,
+      #login-form button {
         width: 300px;
         height: 40px;
       }
 
-      #register-form button{
+      #login-form button {
         width: 150px;
       }
 
-      .login-link{
+      .register-link {
         margin-top: 40px;
         text-align: center;
       }
@@ -62,22 +62,19 @@
   </head>
   <body>
     <main>
-      <h1>Regístrate</h1>
-      <form id="register-form">
-        <label for="register-name">Nombre</label>
-        <input type="text" id="register-name" name="name"/>
+      <h1>Inicia sesión</h1>
+      <form id="login-form">
+        <label for="login-email">Correo</label>
+        <input type="email" id="login-email" name="email" />
 
-        <label for="register-email">Correo</label>
-        <input type="email" id="register-email" name="email"/>
+        <label for="login-psswrd">Contraseña</label>
+        <input type="password" id="login-psswrd" name="pswrd" />
 
-        <label for="register-psswrd">Contraseña</label>
-        <input type="password" id="register-psswrd" name="pswrd"/>
-
-        <button>Registrarme</button>
+        <button type="submit">Iniciar sesión</button>
       </form>
-      <div class="login-link">
-        <p>¿Ya tienes una cuenta?</p>
-        <a href="login.html">Inicia sesión</a>
+      <div class="register-link">
+        <p>¿Aún no tienes una cuenta?</p>
+        <a href="register.html">Registrate</a>
       </div>
     </main>
   </body>
