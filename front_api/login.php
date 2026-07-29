@@ -1,9 +1,6 @@
 <?php
 require __DIR__ . '/../config/db.php';
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 $email = $_POST['email'];
 $pswrd = $_POST['pswrd'];
 

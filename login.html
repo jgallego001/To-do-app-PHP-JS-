@@ -44,19 +44,44 @@
         align-items: center;
       }
 
+      #login-form input{
+        padding: 0 10px;
+      }
+
       #login-form input,
-      #login-form button {
+      #login-form > button {
         width: 300px;
         height: 40px;
       }
 
-      #login-form button {
+      #login-form > button {
         width: 150px;
       }
 
       .register-link {
         margin-top: 40px;
         text-align: center;
+      }
+      .pswrd{
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      #login-form input#login-psswrd{
+        padding: 0 35px 0 10px;
+      }
+      #show-pswrd-btn{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        background-color: #00000000;
+        border: none;
+        width: fit-content;
+        right: 10px;
+        cursor: pointer;
+      }
+      #show-pswrd-img{
+        height: 20px;
       }
     </style>
   </head>
@@ -68,7 +93,10 @@
         <input type="email" id="login-email" name="email" />
 
         <label for="login-psswrd">Contraseña</label>
-        <input type="password" id="login-psswrd" name="pswrd" />
+        <div class="pswrd">
+          <input type="password" id="login-psswrd" name="pswrd" />
+          <button type="button" id="show-pswrd-btn"><img src="assets/show.png" alt="" id="show-pswrd-img"/></button>
+        </div>
 
         <button type="submit">Iniciar sesión</button>
       </form>
