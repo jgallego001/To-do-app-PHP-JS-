@@ -16,6 +16,7 @@ if (!$usuario) {
 
 if(password_verify($pswrd, $usuario["password"])){
     session_start();
+    $_SESSION = [];
 
     $_SESSION["usuario_id"] = $usuario['id'];
     $_SESSION["user_name"] = $usuario['nombre'];

@@ -17,7 +17,14 @@ loginForm.onsubmit = async (e) => {
     if (mensaje === "OK") {
       window.location.href = "./app.html";
     } else {
-      alert(mensaje);
+      const alertError = document.getElementById("alert-error");
+
+      if (!alertError.classList.contains('active')){
+        alertError.classList.add('active')
+      }
+      setTimeout(() => {
+        document.getElementById("alert-error").classList.remove('active');
+      }, 3000);
     }
   } catch (error) {
     console.log(error);

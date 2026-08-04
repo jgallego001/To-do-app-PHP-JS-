@@ -35,7 +35,6 @@ async function cargarTareas() {
 
   renderList(tareas);
 
-  console.log(tareas);
 }
 
 function renderList(list) {

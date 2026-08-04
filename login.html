@@ -19,7 +19,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 40px;
       }
 
       main {
@@ -29,6 +28,7 @@
         background: #d4d0c8;
         box-shadow: 5px 5px 0 #7a7a7a;
         padding: 40px;
+        margin-top: 40px;
       }
 
       h1 {
@@ -83,9 +83,40 @@
       #show-pswrd-img{
         height: 20px;
       }
+
+      .alert-container {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 400px;
+        height: 80px;
+        padding: 10px;
+        background-color: #ff6161;
+        border: 2px solid #9e3232;
+        right: 20%;
+        top: -80px;
+        transition: transform 0.5s ease;
+      }
+      .alert-container img{
+        height: 80%;
+      }
+      .alert-text{
+        color: white;
+      }
+      .alert-container.active{
+        transform: translateY(80px);
+      }
     </style>
   </head>
   <body>
+    <div class="alert-container" id="alert-error">
+      <img src="assets/close.png" alt="cross icon">
+      <div class="alert-text">
+        <h4>Error</h4>
+        <p>Usuario o contraseña incorrectos.</p>
+      </div>
+    </div>
     <main>
       <h1>Inicia sesión</h1>
       <form id="login-form">
