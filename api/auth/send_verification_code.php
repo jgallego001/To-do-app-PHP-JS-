@@ -1,11 +1,11 @@
 <?php
-require __DIR__ . '/../config/db.php';
+require __DIR__ . '/../../config/db.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 session_start();
 
 $email = $_POST['email'];

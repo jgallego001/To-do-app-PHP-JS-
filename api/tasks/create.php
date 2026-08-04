@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../config/db.php';
+require __DIR__ . '/../../config/db.php';
 session_start();
 
 $input_titulo = $_POST['titulo'];

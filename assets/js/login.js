@@ -6,7 +6,7 @@ loginForm.onsubmit = async (e) => {
   const data = new FormData(loginForm);
 
   try {
-    const res = await fetch("./front_api/login.php", {
+    const res = await fetch("./api/auth/login.php", {
       method: "POST",
       body: data,
     });
@@ -37,9 +37,9 @@ showPswrdBtn.addEventListener('click', ()=>{
   
   if (passwordInput.type === "password"){
     passwordInput.type = "text";
-    showPswrdImg.src = "assets/hide.png"
+    showPswrdImg.src = "assets/images/hide.png"
   } else if (passwordInput.type === "text"){
     passwordInput.type = "password";
-    showPswrdImg.src = "assets/show.png"
+    showPswrdImg.src = "assets/images/show.png"
   }
 })

@@ -15,7 +15,7 @@ emailForm.onsubmit = async (e) => {
     return;
   }
 
-  await fetch("./api/send_verification_code.php", {
+  await fetch("./api/auth/send_verification_code.php", {
     method: "POST",
     body: data,
   });
@@ -29,7 +29,7 @@ codeForm.onsubmit = async (e) => {
   e.preventDefault();
   const data = new FormData(codeForm);
 
-  const res = await fetch("./api/verify_code.php", {
+  const res = await fetch("./api/auth/verify_code.php", {
     method: "POST",
     body: data,
   });
@@ -44,7 +44,7 @@ codeForm.onsubmit = async (e) => {
 
 resendCodeLink.addEventListener("click", () => {
   const data = new FormData(emailForm);
-  fetch("./api/send_verification_code.php", {
+  fetch("./api/auth/send_verification_code.php", {
     method: "POST",
     data,
   });
@@ -77,7 +77,7 @@ userDataForm.onsubmit = async (e) => {
   if (pswrdInput.value === confirmPswrdInput.value) {
     const data = new FormData(userDataForm);
 
-    const res = await fetch("./front_api/register.php", {
+    const res = await fetch("./api/auth/register.php", {
       method: "POST",
       body: data,
     });
@@ -100,78 +100,14 @@ showPswrdBtns.forEach((btn) => {
       if (input.type === "password") {
         input.type = "text";
         showPswrdImgs.forEach((img) => {
-          img.src = "assets/hide.png";
+          img.src = "assets/images/hide.png";
         });
       } else if (input.type === "text") {
         input.type = "password";
         showPswrdImgs.forEach((img) => {
-          img.src = "assets/show.png";
+          img.src = "assets/images/show.png";
         });
       }
     });
   });
 });
-
-/* registerForm.onsubmit = async (e) => {
-  e.preventDefault();
-  const datos = new FormData(registerForm); */
-
-/*   await fetch("./front_api/register.php", {
-    method: "POST",
-    body: datos,
-  }); */
-
-/*   window.location.href = "./login.html"; */
-
-/* showPswrdBtn.addEventListener('click', ()=>{
-  const passwordInput = document.getElementById('register-psswrd');
-  const showPswrdImg = document.getElementById('show-pswrd-img');
-  
-  if (passwordInput.type === "password"){
-    passwordInput.type = "text";
-    showPswrdImg.src = "assets/hide.png"
-  } else if (passwordInput.type === "text"){
-    passwordInput.type = "password";
-    showPswrdImg.src = "assets/show.png"
-  }
-}) */
-/* 
-verifyEmailBtn.addEventListener("click", () => {
-  const data = new FormData(registerForm);
-  fetch("./api/send_verification_code.php", {
-    method: "POST",
-    body: data,
-  });
-  if (!document.getElementById("resend-code-link")) {
-    createResendCode(data);
-  }
-});
-
-function createResendCode(data) {
-  const a = document.createElement("a");
-  a.id = "resend-code-link";
-  a.innerText = "Reenviar código";
-  a.href = "#";
-  a.addEventListener("click", () => {
-    fetch("./api/send_verification_code.php", {
-      method: "POST",
-      body: data,
-    });
-  });
-  const registerSection = document.querySelector(".register");
-  registerSection.appendChild(a);
-}
-
-verifyCode.onsubmit = (e) => {
-  e.preventDefault();
-
-  const data = new FormData();
-  data.append("email", document.getElementById("register-email").value);
-  data.append("codigo", document.getElementById("verify-code").value);
-
-  fetch("./api/verify_code.php", {
-    method: "POST",
-    body: data,
-  });
-};
- */

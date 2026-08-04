@@ -1,5 +1,24 @@
-CREATE TABLE tareas (
-    id SERIAL PRIMARY KEY,
-    titulo VARCHAR(100),
-    completada BOOLEAN DEFAULT FALSE
+CREATE TABLE IF NOT EXISTS public.usuarios (
+    id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS public.tareas (
+    id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    titulo VARCHAR(100) NOT NULL,
+    completada BOOLEAN NOT NULL DEFAULT FALSE,
+    usuario_id INTEGER NOT NULL,
+    CONSTRAINT fk_usuario
+        FOREIGN KEY (usuario_id)
+        REFERENCES public.usuarios(id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS public.cod_verificacion (
+    id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    email VARCHAR(100) NOT NULL,
+    codigo VARCHAR(6) NOT NULL,
+    expiracion TIMESTAMP NOT NULL
 );
