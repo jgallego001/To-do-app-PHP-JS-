@@ -39,7 +39,7 @@ try {
     $mail->Host = 'smtp.resend.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'resend';
-    $mail->Password = 're_xxxxxxxxxxxxxxxxxxx';
+    $mail->Password = 're_xxxxxxxxxxxxxxxx';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = 465;
 
