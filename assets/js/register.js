@@ -22,7 +22,7 @@ emailForm.onsubmit = async (e) => {
 
   emailForm.classList.add("hidden");
   codeForm.classList.remove("hidden");
-  resendCodeLink.classList.remove('hidden')
+  resendCodeLink.classList.remove("hidden");
 };
 
 codeForm.onsubmit = async (e) => {
@@ -41,13 +41,14 @@ codeForm.onsubmit = async (e) => {
   }
 };
 
-
-resendCodeLink.addEventListener("click", () => {
+resendCodeLink.addEventListener("click", async () => {
   const data = new FormData(emailForm);
-  fetch("./api/auth/send_verification_code.php", {
+  const res = await fetch("./api/auth/send_verification_code.php", {
     method: "POST",
     data,
   });
+  const text = await res.text();
+  console.log(text);
   iniciarEspera();
 });
 
