@@ -1,12 +1,19 @@
 <?php
+echo "A<br>";
+flush();
 require __DIR__ . '/../../config/db.php';
+echo "B<br>";
+flush();
 require __DIR__ . '/../../vendor/autoload.php';
+echo "C<br>";
+flush();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-
+echo "D<br>";
+flush();
 $envPath = __DIR__ . '/../../.env';
 
 if (file_exists($envPath)) {
@@ -38,6 +45,8 @@ if (!$fila_correo) {
     $result = pg_query_params($connection, $sql, [$codigo, $email]);
 }
 
+echo "E<br>";
+flush();
 $mail = new PHPMailer(true);
 try {
     $mail->CharSet = 'UTF-8';
@@ -61,8 +70,12 @@ try {
     $mail->Body = "Tu código de verificación para To Do App es: {$codigo}.";
     $mail->AltBody = 'Este es el cuerpo en texto plano para clientes de correo no HTML';
 
+    echo "F<br>";
+    flush();
     $mail->send();
 
+    echo "G<br>";
+    flush();
     echo 'El correo fue enviado exitosamente.';
 } catch (Exception $e) {
     echo 'El mensaje no pudo ser enviado. Error Mailer: ' . $mail->ErrorInfo;
