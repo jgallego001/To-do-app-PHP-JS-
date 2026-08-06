@@ -6,9 +6,13 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../../");
-$dotenv->load();
 
+$envPath = __DIR__ . '/../../.env';
+
+if (file_exists($envPath)) {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+    $dotenv->load();
+}
 
 session_start();
 
