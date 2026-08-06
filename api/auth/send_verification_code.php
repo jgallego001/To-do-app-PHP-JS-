@@ -1,4 +1,5 @@
 <?php
+session_start();
 echo "A<br>";
 flush();
 require __DIR__ . '/../../config/db.php';
@@ -21,7 +22,7 @@ if (file_exists($envPath)) {
     $dotenv->load();
 }
 
-session_start();
+
 
 $email = $_POST['email'];
 $_SESSION['pending_email'] = $email;
