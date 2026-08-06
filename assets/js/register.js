@@ -45,7 +45,7 @@ resendCodeLink.addEventListener("click", async () => {
   const data = new FormData(emailForm);
   const res = await fetch("./api/auth/send_verification_code.php", {
     method: "POST",
-    data,
+    body: data
   });
   const text = await res.text();
   console.log(text);
