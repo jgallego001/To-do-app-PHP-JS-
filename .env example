@@ -1,0 +1,9 @@
+DB_HOST="xxxx"
+DB_PORT="xxx"
+DB_NAME="xxxx"
+DB_USER="xxxx"
+DB_PASSWORD="xxxx"
+
+SMTP_HOST="xxxx"
+SMTP_USER="xxxx"
+SMTP_PASSWORD="xxxx"
