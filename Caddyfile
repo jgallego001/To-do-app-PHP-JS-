@@ -1,0 +1,16 @@
+:{$PORT:80} {
+    encode zstd gzip
+
+    @api path /api/*
+
+    handle @api {
+        root * /app
+        php_server
+    }
+
+    handle {
+        root * /app/public
+        php_server
+    }
+}
+
