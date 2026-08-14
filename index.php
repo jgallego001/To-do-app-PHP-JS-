@@ -7,4 +7,3 @@ if (isset($_SESSION["usuario_id"])) {
 } else {
     header("Location: login.html");
 }
-exit;

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 echo "A<br>";
 flush();
 require __DIR__ . '/../../config/db.php';
