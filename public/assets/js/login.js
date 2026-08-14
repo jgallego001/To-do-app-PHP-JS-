@@ -6,7 +6,7 @@ loginForm.onsubmit = async (e) => {
   const data = new FormData(loginForm);
 
   try {
-    const res = await fetch("./api/auth/login.php", {
+    const res = await fetch("./../../../api/auth/login.php", {
       method: "POST",
       body: data,
     });
@@ -15,7 +15,7 @@ loginForm.onsubmit = async (e) => {
     const mensaje = await res.text();
 
     if (mensaje === "OK") {
-      window.location.href = "./app.html";
+      window.location.href = "./../app.html";
     } else {
       const alertError = document.getElementById("alert-error");
 

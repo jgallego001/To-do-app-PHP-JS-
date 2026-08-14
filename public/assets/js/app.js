@@ -2,7 +2,7 @@ const addTaskForm = document.getElementById("addTaskForm");
 
 async function getUsername() {
   try {
-    const username = await fetch("./../../api/users/user.php")
+    const username = await fetch("./../../../api/users/user.php")
       .then((res) => res.json())
       .then((data) => data.name);
 
@@ -21,7 +21,7 @@ addTaskForm.addEventListener("submit", async (e) => {
   const datos = new FormData(addTaskForm);
   document.getElementById("new-task-input").value = "";
 
-  await fetch("./../../api/tasks/create.php", {
+  await fetch("./../../../api/tasks/create.php", {
     method: "POST",
     body: datos,
   });
@@ -30,7 +30,7 @@ addTaskForm.addEventListener("submit", async (e) => {
 });
 
 async function cargarTareas() {
-  const response = await fetch("./../../api/tasks/read.php");
+  const response = await fetch("./../../../api/tasks/read.php");
   const tareas = await response.json();
 
   renderList(tareas);
@@ -115,7 +115,7 @@ function toggleCompleted(id) {
   const datos = new FormData();
   datos.append("id", id);
 
-  fetch("./../../api/tasks/toggle_completed.php", {
+  fetch("./../../../api/tasks/toggle_completed.php", {
     method: "POST",
     body: datos,
   });
@@ -126,7 +126,7 @@ async function updateTask(id, titulo) {
   datos.append("id", id);
   datos.append("titulo", titulo);
 
-  await fetch("./../../api/tasks/update.php", {
+  await fetch("./../../../api/tasks/update.php", {
     method: "POST",
     body: datos,
   });
@@ -136,7 +136,7 @@ function deleteTask(item_id) {
   const datos = new FormData();
   datos.append("id", item_id);
 
-  fetch("./../../api/tasks/delete.php", {
+  fetch("./../../../api/tasks/delete.php", {
     method: "POST",
     body: datos,
   });

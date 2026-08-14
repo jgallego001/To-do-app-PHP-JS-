@@ -15,7 +15,7 @@ emailForm.onsubmit = async (e) => {
     return;
   }
 
-  await fetch("./api/auth/send_verification_code.php", {
+  await fetch("./../../../api/auth/send_verification_code.php", {
     method: "POST",
     body: data,
   });
@@ -29,7 +29,7 @@ codeForm.onsubmit = async (e) => {
   e.preventDefault();
   const data = new FormData(codeForm);
 
-  const res = await fetch("./api/auth/verify_code.php", {
+  const res = await fetch("./../../../api/auth/verify_code.php", {
     method: "POST",
     body: data,
   });
@@ -43,7 +43,7 @@ codeForm.onsubmit = async (e) => {
 
 resendCodeLink.addEventListener("click", async () => {
   const data = new FormData(emailForm);
-  const res = await fetch("./api/auth/send_verification_code.php", {
+  const res = await fetch("./../../../api/auth/send_verification_code.php", {
     method: "POST",
     body: data
   });
@@ -78,14 +78,14 @@ userDataForm.onsubmit = async (e) => {
   if (pswrdInput.value === confirmPswrdInput.value) {
     const data = new FormData(userDataForm);
 
-    const res = await fetch("./api/auth/register.php", {
+    const res = await fetch("./../../../api/auth/register.php", {
       method: "POST",
       body: data,
     });
     const result = await res.text();
 
     if (result === "OK") {
-      window.location.href = "./app.html";
+      window.location.href = "./../app.html";
     }
   } else {
     alert("Las contraseñas no coinciden");
