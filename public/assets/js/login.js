@@ -15,7 +15,7 @@ loginForm.onsubmit = async (e) => {
     const mensaje = await res.text();
 
     if (mensaje === "OK") {
-      window.location.href = "./../app.html";
+      window.location.href = "./../../public/app.html";
     } else {
       const alertError = document.getElementById("alert-error");
 

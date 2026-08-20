@@ -1,5 +1,5 @@
 {
-    "name": "vercel/docker-php",
+    "name": "docker/php-composer",
     "require": {
         "phpmailer/phpmailer": "^7.1",
         "vlucas/phpdotenv": "^5.6"

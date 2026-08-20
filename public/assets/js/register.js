@@ -85,7 +85,7 @@ userDataForm.onsubmit = async (e) => {
     const result = await res.text();
 
     if (result === "OK") {
-      window.location.href = "./../app.html";
+      window.location.href = "./../../public/app.html";
     }
   } else {
     alert("Las contraseñas no coinciden");

@@ -20,12 +20,12 @@ $result = pg_query_params($connection, $sql, [$name, $email, $password_hash]);
 if (!$result) {
     die(pg_last_error($connection));
 } else {
-    echo "OK";
-    $row = pg_fetch_assoc($result);
-
     $_SESSION = [];
-
     session_regenerate_id(true);
+
+    echo "OK";
+
+    $row = pg_fetch_assoc($result);
 
     $_SESSION["usuario_id"] = $row['id'];
     $_SESSION["user_name"] = $row['nombre'];
